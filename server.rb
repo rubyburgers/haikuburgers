@@ -4,13 +4,13 @@ require 'sinatra'
 require 'faraday'
 require 'json'
 require 'jsonpath'
-require 'dotenv'
+require 'dotenv' if ENV['RACK_ENV'] != 'production'
 require 'pg'
 require 'sequel'
 require "dalli"
 require "rack-cache"
 class App < Sinatra::Base
-  Dotenv.load
+  Dotenv.load if ENV['RACK_ENV'] != 'production'
 
   DB = Sequel.connect(ENV['DATABASE_URL'] || 'postgres://localhost:15432/haikuburgers')
   DB.create_table? :haikus do
