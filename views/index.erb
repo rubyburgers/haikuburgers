@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Rubyburgers poems</title>
+<link rel="icon" type="image/png" href="http://rubyburgers.co/favicon.png">
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<style>
+img {
+  margin: 20px 0;
+  width: 600px;
+}
+p, h1 {
+  font-family: 'Lato', sans-serif;
+}
+h1 {
+  text-align: center;
+}
+blockquote {
+  border-left: 3px solid #de412c;
+  padding: 0 0 0 16px;
+  margin: 0 0 30px;
+}
+blockquote p {
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: normal;
+  margin-bottom: .4em;
+}
+blockquote small {
+  font-size: 18px;
+  line-height: 1.72222;
+  font-style: italic;
+  color: inherit;
+}
+blockquote small:before {
+  content: "";
+}
+blockquote.pull-right {
+  padding-right: 16px;
+  padding-left: 0;
+  border-right: 3px solid #e7e9ec;
+  border-left: 0;
+}
+blockquote.pull-right small:after {
+  content: "";
+}
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+  <img src='http://rubyburgers.co/images/logo.png'/>
+  <h1>Rubyburgers poetry</h1>
+  <% haikus.each do |haiku| %>
+    <blockquote><p><%= haiku %></p></blockquote>
+  <% end %>
+</div>
+</body>
+</html>
